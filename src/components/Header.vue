@@ -13,15 +13,15 @@
       </a>
       <a href="/" class="navbar-brand">Pizza点餐系统</a>
       <ul class="navbar-nav">
-        <li><a href="#" class="nav-link">主页</a></li>
-        <li><a href="#" class="nav-link">菜单</a></li>
-        <li><a href="#" class="nav-link">管理</a></li>
-        <li><a href="#" class="nav-link">关于我们</a></li>
+        <li><router-link :to="{name:'homeLink'}" class="nav-link">主页</router-link></li>
+        <li><router-link :to="{name:'menuLink'}" class="nav-link">菜单</router-link></li>
+        <li><router-link :to="{name:'adminLink'}" class="nav-link">管理</router-link></li>
+        <li><router-link :to="{name:'aboutLink'}" class="nav-link">关于我们</router-link></li>
       </ul>
 
       <ul class="navbar-nav ml-auto">
-        <li><a href="#" class="nav-link">登录</a></li>
-        <li><a href="#" class="nav-link">注册</a></li>
+        <li><router-link :to="{name:'loginLink'}" class="nav-link">登录</router-link></li>
+        <li><router-link :to="{name:'registerLink'}" class="nav-link">注册</router-link></li>
       </ul>
     </nav>
   </header>
@@ -29,7 +29,12 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data(){
+    return {
+
+    }
+  }
 }
 </script>
 
