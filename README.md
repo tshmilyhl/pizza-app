@@ -10,7 +10,11 @@
 
 ### 2.2 使用VueRouter
 
-### 2.3 router-link&router-view
+### 2.3 路由
+
+#### 2.3.1 router-link&router-view
+
+- 路由的name属性及跳转方法
 
 - tag属性指定渲染成什么标签
 - to属性可以指定data属性或命名一个name对象
@@ -19,4 +23,22 @@
   - replace
   - go
   - forward & back
+
+#### 2.3.2 路由嵌套
+
+- 二级路由
+- 三级路由
+
+#### 2.3.3 导航守卫
+
+- beforeEach(to,from,next)
+- afterEach(to,from)
+
+
+
+
+
+
+
+
 
