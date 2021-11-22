@@ -21,9 +21,19 @@ Vue.use(VueRouter)
 
 //配置路由
 const routes = [
-  {path:'/',name:'homeLink',component:Home},
+  {path:'/',name:'homeLink',components: {
+    default:Home,
+      'orderingGuide':OrderingGuide,
+      'delivery':Delivery,
+      'history':History
+    }},
   {path:'/menu',name:'menuLink',component:Menu},
-  {path:'/admin',name:'adminLink',component:Admin},
+  {path:'/admin',name:'adminLink',component:Admin,
+    //路由独享守卫
+    // beforeEnter:(to,from ,next)=>{
+    // alert("飞登录页面，不能访问此页面")
+    // }
+    },
   {path:'/about'
     ,name:'aboutLink'
     ,component:About,
@@ -63,15 +73,19 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  mode:'history'
+  mode:'history',
+  scrollBehavior(to,from,savedPosition){
+    // return { x:0,y:100}
+    return {selector:'.btn'}
+  }
 })
 //全局守卫
-router.beforeEach((to,from,next)=>{
- if(to.path=='/login' || to.path=='/register'){
-   next()
- }else{
-   alert("还没有登录，请先登录");
-   next("/login")
- }
-})
+// router.beforeEach((to,from,next)=>{
+//  if(to.path=='/login' || to.path=='/register'){
+//    next()
+//  }else{
+//    alert("还没有登录，请先登录");
+//    next("/login")
+//  }
+// })
 export default router
